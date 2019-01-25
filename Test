@@ -1,0 +1,38 @@
+// Example for without plugin
+
+docker instruction 
+docker build -f Dockerfile -t docker-spring-boot .
+
+// to check the images 
+docker images
+
+
+// push and run the image on the docker
+ docker run -p 8087:8087 docker-spring-boot
+ 
+ // to stop running docker container
+  docker stop 620824cf5989
+
+  // to remove docker container 
+  docker rm 620824cf5989
+
+  
+*** Example for With plugin *****
+
+*  Do the pom configuration
+*  mvn clean install
+*  mvn docker:build 
+
+
+******* To Configure docker do the following configuration ********
+Set below enviroment variable 
+
+docker-machine env
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="C:\Users\parul.jain\.docker\machine\machines\default"
+export DOCKER_MACHINE_NAME="default"
+export COMPOSE_CONVERT_WINDOWS_PATHS="true"
+# Run this command to configure your shell:
+# eval $("C:\Program Files\Docker Toolbox\docker-machine.exe" env)
+
